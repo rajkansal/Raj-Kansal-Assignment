@@ -41,7 +41,7 @@ def process_images(request_id, webhook_url=None):
                 output_filename = f"{uuid.uuid4()}.jpg"
                 output_path = os.path.join(PROCESSED_IMAGES_DIR, output_filename)
                 
-                img.save(output_path, "JPEG", quality=50)
+                img.save(output_path, "WEBP", quality=50, optimize=True)
                 output_paths.append(output_path)
 
             except Exception as e:
